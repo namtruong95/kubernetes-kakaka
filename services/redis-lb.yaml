@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-lb
+spec:
+  ports:
+    - name: "6379"
+      port: 6379
+      protocol: TCP
+      targetPort: 6379
+  type: LoadBalancer
+  selector:
+    app: db
